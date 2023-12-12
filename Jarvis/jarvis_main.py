@@ -1,3 +1,4 @@
+import operator
 import os
 import time
 import webbrowser
@@ -217,6 +218,11 @@ if __name__ == "__main__":
                         return get_operator_fn(oper)(op1, op2)
                     speak("your result is")
                     speak(eval_bianary_expr(*(my_string.split())))
+
+############################  scroll down  ################################
+
+                elif "scroll down" in query:
+                    pyautogui.scroll(1000)
 
 ############################  OPENING APPS  ################################
                 ##PHOTOSHOP##
