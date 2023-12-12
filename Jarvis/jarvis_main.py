@@ -179,8 +179,9 @@ if __name__ == "__main__":
                 elif "lock the system " in query:
                     pyautogui.hotkey('win', 'l')
 
-                elif "lock the system " in query:
-                    pyautogui.hotkey('win', 'l')
+                elif "shut down the system" in query:
+                    os.system("shutdown /s /t 5")
+
 
                 elif "restart the system" in query:
                     os.system("shutdown /r /t 5")
