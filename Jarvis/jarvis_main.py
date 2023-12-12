@@ -1,6 +1,7 @@
 import os
 import time
 import webbrowser
+from click import BaseCommand
 import pyautogui
 import pyttsx3
 import speech_recognition as sr
@@ -175,8 +176,47 @@ if __name__ == "__main__":
 ############################  LOCK/SHUTDOWN/RESTART  ################################
 
                 elif "lock the system " in query:
-                       pyautogui.hotkey('win', 'l')
+                    pyautogui.hotkey('win', 'l')
 
+                elif "lock the system " in query:
+                    pyautogui.hotkey('win', 'l')
+
+                elif "restart the system" in query:
+                    os.system("shutdown /r /t 5")
+
+############################  SCREENSHOT  ################################
+
+                elif "take screenshot" in query:
+                    speak('tell me a name for the file')
+                    name = BaseCommand().lower()
+                    time.sleep(3)
+                    img = pyautogui.screenshot() 
+                    img.save(f"{name}.png") 
+                    speak("screenshot saved")
+
+############################  LOCK/SHUTDOWN/RESTART  ################################
+
+                elif "calculate" in query:
+                    r = sr.Recognizer()
+                    with sr.Microphone() as source:
+                        speak("ready")
+                        print("Listning...")
+                        r.adjust_for_ambient_noise(source)
+                        audio = r.listen(source)
+                    my_string=r.recognize_google(audio)
+                    print(my_string)
+                    def get_operator_fn(op):
+                        return {
+                            '+' : operator.add,
+                            '-' : operator.sub,
+                            'x' : operator.mul,
+                            'divided' : operator.__truediv__,
+                        }[op]
+                    def eval_bianary_expr(op1,oper, op2):
+                        op1,op2 = int(op1), int(op2)
+                        return get_operator_fn(oper)(op1, op2)
+                    speak("your result is")
+                    speak(eval_bianary_expr(*(my_string.split())))
 
 ############################  OPENING APPS  ################################
                 ##PHOTOSHOP##
