@@ -172,6 +172,11 @@ if __name__ == "__main__":
                 elif "window left " in query:
                        pyautogui.hotkey('win', 'left')
 
+############################  LOCK/SHUTDOWN/RESTART  ################################
+
+                elif "lock the system " in query:
+                       pyautogui.hotkey('win', 'l')
+
 
 ############################  OPENING APPS  ################################
                 ##PHOTOSHOP##
