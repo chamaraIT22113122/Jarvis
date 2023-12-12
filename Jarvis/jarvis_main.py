@@ -1,5 +1,6 @@
 import os
 import time
+import webbrowser
 import pyautogui
 import pyttsx3
 import speech_recognition as sr
@@ -180,6 +181,12 @@ if __name__ == "__main__":
                 elif 'close photoshop' in query:
                      speak("Closing,sir")
                      os.system("taskkill /f /im Photoshop.exe")
+
+                elif 'open chat gpt' in query:
+                    speak("opening chatgtp")
+                    url = 'https://chat.openai.com'  # Replace this with your desired URL
+                    webbrowser.open(url)
+
 
                 ##Downloads##
                 elif 'open download folder' in query.lower():
