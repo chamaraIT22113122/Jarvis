@@ -196,7 +196,7 @@ if __name__ == "__main__":
                     img.save(f"{name}.png") 
                     speak("screenshot saved")
 
-############################  LOCK/SHUTDOWN/RESTART  ################################
+############################  calculate  ################################
 
                 elif "calculate" in query:
                     r = sr.Recognizer()
