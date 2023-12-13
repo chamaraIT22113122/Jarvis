@@ -228,8 +228,9 @@ if __name__ == "__main__":
 ############################  OPENING APPS  ################################
                 ##PHOTOSHOP##
                 elif'open photoshop' in query:
-                     speak("Launching, sir")
-                     os.startfile('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Adobe Photoshop 2022')
+                    speak("Launching, sir")
+                    os.startfile('C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Adobe Photoshop 2022')
+
                 elif 'close photoshop' in query:
                      speak("Closing,sir")
                      os.system("taskkill /f /im Photoshop.exe")
@@ -237,7 +238,7 @@ if __name__ == "__main__":
 
                 elif 'opnen youtube' in query:
                      speak("opening,sir")
-                     os.startfile('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Adobe Photoshop 2022')
+                     os.startfile('C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Adobe Photoshop 2022')
 
                 elif 'open chat gpt' in query:
                     speak("opening chatgtp")
