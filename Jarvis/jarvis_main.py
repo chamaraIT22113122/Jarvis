@@ -234,6 +234,11 @@ if __name__ == "__main__":
                      speak("Closing,sir")
                      os.system("taskkill /f /im Photoshop.exe")
 
+
+                elif 'opnen youtube' in query:
+                     speak("opening,sir")
+                     os.startfile('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Adobe Photoshop 2022')
+
                 elif 'open chat gpt' in query:
                     speak("opening chatgtp")
                     url = 'https://chat.openai.com'  # Replace this with your desired URL
@@ -266,9 +271,7 @@ if __name__ == "__main__":
                 elif "google" in query:
                             from SearchNow import searchGoogle
                             searchGoogle(query)
-                elif "youtube" in query:
-                    from SearchNow import searchYoutube
-                    searchYoutube(query)
+                
                 elif "wikipedia" in query:
                     from SearchNow import searchWikipedia
                     searchWikipedia(query)
@@ -336,6 +339,8 @@ if __name__ == "__main__":
 
                 elif 'clear browsing history' in query:
                     pyautogui.hotkey('ctrl', 'shift', 'delete')
+
+ ############################ youtube Automation ################################
                
 ############################ Exit ################################
 
